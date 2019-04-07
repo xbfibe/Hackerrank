@@ -1,0 +1,40 @@
+#include <assert.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+/*
+    Spring - from March 1 to May 31;    3 -> 5
+    Summer - from June 1 to August 31; 6 -> 8
+*/
+int height(int n) {
+  int growth, j;
+  growth = j = 1;
+  for (int i = 1; i <= n; i++) {
+    if ((i % 2) == 0) {
+      growth = growth * 2 + 1;
+      j++;
+    }
+  }
+  if ((n % 2) != 0) {
+    growth = growth * 2;
+  }
+  if (!n) {
+    return 1;
+  } else {
+    return growth;
+  }
+}
+int main() {
+  int t;
+  scanf("%d", &t);
+  for (int a0 = 0; a0 < t; a0++) {
+    int n;
+    scanf("%d", &n);
+    int h = height(n);
+    printf("%d\n", h);
+  }
+  return 0;
+}
