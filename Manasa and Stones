@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+#define int long long
+using namespace std;
+
+void solve()
+{
+    int n,a,b;
+    cin >> n >> a >> b;
+    if(b<a)swap(a,b);
+    int satrt = (n-1)*a;
+    int end = (n-1)*b;
+    int cycle = abs(a-b);
+    if(a==b){
+        cout<<satrt<<"\n"; return;
+    }
+    for(int i = satrt; i<=end;)
+    {
+        cout<<i<<" ";
+        i+=cycle;
+    }
+    cout<<endl;
+}
+
+
+
+int32_t main()
+{
+
+    int t;
+    cin >> t;
+    while(t--)
+    {
+        solve();
+    }
+
+    
+}
